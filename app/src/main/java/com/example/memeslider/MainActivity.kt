@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private var soundId33 = 0
     private var soundId34 = 0
     private var soundId35 = 0
+    //Global Properties
     private var leftVolume = 1F
     private var rightVolume = 1F
     private var soundPriorityGlobal = 1
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        soundPool = SoundPool(6, AudioManager.STREAM_MUSIC,100)
+        soundPool = SoundPool(2, AudioManager.STREAM_MUSIC,100)
         soundId1 = soundPool!!.load(baseContext,  R.raw.adjara_gudju, soundPriorityGlobal)
         soundId2 = soundPool!!.load(baseContext,  R.raw.bababooey, soundPriorityGlobal)
         soundId3 = soundPool!!.load(baseContext,  R.raw.daladna, soundPriorityGlobal)
@@ -136,42 +137,77 @@ class MainActivity : AppCompatActivity() {
         soundId34 = soundPool!!.load(baseContext,  R.raw.ne_nihya, soundPriorityGlobal)
         soundId35 = soundPool!!.load(baseContext,  R.raw.ne_nihya, soundPriorityGlobal)
 
-
-        findViewById<ImageView>(R.id.iv_cell_1_1).setOnClickListener{playSound(1)}
-        findViewById<ImageView>(R.id.iv_cell_1_2).setOnClickListener{playSound(2)}
-        findViewById<ImageView>(R.id.iv_cell_1_3).setOnClickListener{playSound(3)}
-        findViewById<ImageView>(R.id.iv_cell_1_4).setOnClickListener{playSound(4)}
-        findViewById<ImageView>(R.id.iv_cell_1_5).setOnClickListener{playSound(5)}
-        findViewById<ImageView>(R.id.iv_cell_2_1).setOnClickListener{playSound(6)}
-        findViewById<ImageView>(R.id.iv_cell_2_2).setOnClickListener{playSound(7)}
-        findViewById<ImageView>(R.id.iv_cell_2_3).setOnClickListener{playSound(8)}
-        findViewById<ImageView>(R.id.iv_cell_2_4).setOnClickListener{playSound(9)}
-        findViewById<ImageView>(R.id.iv_cell_2_5).setOnClickListener{playSound(10)}
-        findViewById<ImageView>(R.id.iv_cell_3_1).setOnClickListener{playSound(11)}
-        findViewById<ImageView>(R.id.iv_cell_3_2).setOnClickListener{playSound(12)}
-        findViewById<ImageView>(R.id.iv_cell_3_3).setOnClickListener{playSound(13)}
-        findViewById<ImageView>(R.id.iv_cell_3_4).setOnClickListener{playSound(14)}
-        findViewById<ImageView>(R.id.iv_cell_3_5).setOnClickListener{playSound(15)}
-        findViewById<ImageView>(R.id.iv_cell_4_1).setOnClickListener{playSound(16)}
-        findViewById<ImageView>(R.id.iv_cell_4_2).setOnClickListener{playSound(17)}
-        findViewById<ImageView>(R.id.iv_cell_4_3).setOnClickListener{playSound(18)}
-        findViewById<ImageView>(R.id.iv_cell_4_4).setOnClickListener{playSound(19)}
-        findViewById<ImageView>(R.id.iv_cell_4_5).setOnClickListener{playSound(20)}
-        findViewById<ImageView>(R.id.iv_cell_5_1).setOnClickListener{playSound(21)}
-        findViewById<ImageView>(R.id.iv_cell_5_2).setOnClickListener{playSound(22)}
-        findViewById<ImageView>(R.id.iv_cell_5_3).setOnClickListener{playSound(23)}
-        findViewById<ImageView>(R.id.iv_cell_5_4).setOnClickListener{playSound(24)}
-        findViewById<ImageView>(R.id.iv_cell_5_5).setOnClickListener{playSound(25)}
-        findViewById<ImageView>(R.id.iv_cell_6_1).setOnClickListener{playSound(26)}
-        findViewById<ImageView>(R.id.iv_cell_6_2).setOnClickListener{playSound(27)}
-        findViewById<ImageView>(R.id.iv_cell_6_3).setOnClickListener{playSound(28)}
-        findViewById<ImageView>(R.id.iv_cell_6_4).setOnClickListener{playSound(29)}
-        findViewById<ImageView>(R.id.iv_cell_6_5).setOnClickListener{playSound(30)}
-        findViewById<ImageView>(R.id.iv_cell_7_1).setOnClickListener{playSound(31)}
-        findViewById<ImageView>(R.id.iv_cell_7_2).setOnClickListener{playSound(32)}
-        findViewById<ImageView>(R.id.iv_cell_7_3).setOnClickListener{playSound(33)}
-        findViewById<ImageView>(R.id.iv_cell_7_4).setOnClickListener{playSound(34)}
-        findViewById<ImageView>(R.id.iv_cell_7_5).setOnClickListener{playSound(35)}
-
+        //Установка иконок
+        findViewById<ImageView>(R.id.iv_cell_1_1_id1).setImageResource(R.drawable.adjara_gudjiu)
+        findViewById<ImageView>(R.id.iv_cell_1_2_id2).setImageResource(R.drawable.bababoy)
+        findViewById<ImageView>(R.id.iv_cell_1_3_id3).setImageResource(R.drawable.daladna)
+        findViewById<ImageView>(R.id.iv_cell_1_4_id4).setImageResource(R.drawable.davay_po_novoy)
+        findViewById<ImageView>(R.id.iv_cell_1_5_id5).setImageResource(R.drawable.dich)
+        findViewById<ImageView>(R.id.iv_cell_2_1_id6).setImageResource(R.drawable.etot_paren_iz_teh)
+        findViewById<ImageView>(R.id.iv_cell_2_2_id7).setImageResource(R.drawable.gonshic)
+        findViewById<ImageView>(R.id.iv_cell_2_3_id8).setImageResource(R.drawable.gta_sa)
+        findViewById<ImageView>(R.id.iv_cell_2_4_id9).setImageResource(R.drawable.kazahstan)
+        findViewById<ImageView>(R.id.iv_cell_2_5_id10).setImageResource(R.drawable.ly_ti_krusa)
+        findViewById<ImageView>(R.id.iv_cell_3_1_id11).setImageResource(R.drawable.debil)
+        findViewById<ImageView>(R.id.iv_cell_3_2_id12).setImageResource(R.drawable.shrek)
+        findViewById<ImageView>(R.id.iv_cell_3_3_id13).setImageResource(R.drawable.na_nas_napali)
+        findViewById<ImageView>(R.id.iv_cell_3_4_id14).setImageResource(R.drawable.ne_nihuy)
+        findViewById<ImageView>(R.id.iv_cell_3_5_id15).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_4_1_id16).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_4_2_id17).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_4_3_id18).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_4_4_id19).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_4_5_id20).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_5_1_id21).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_5_2_id22).setImageResource(R.drawable.tututtutu)
+        findViewById<ImageView>(R.id.iv_cell_5_3_id23).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_5_4_id24).setImageResource(R.drawable.vsego_horoshego)
+        findViewById<ImageView>(R.id.iv_cell_5_5_id25).setImageResource(R.drawable.vi_kto_takie)
+        findViewById<ImageView>(R.id.iv_cell_6_1_id26).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_6_2_id27).setImageResource(R.drawable.ya_musulman)
+        findViewById<ImageView>(R.id.iv_cell_6_3_id28).setImageResource(R.drawable.ya_pohlopay)
+        findViewById<ImageView>(R.id.iv_cell_6_4_id29).setImageResource(R.drawable.moi_polnomochiy_vsy)
+        findViewById<ImageView>(R.id.iv_cell_6_5_id30).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_7_1_id31).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_7_2_id32).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_7_3_id33).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_7_4_id34).setImageResource(R.drawable.test)
+        findViewById<ImageView>(R.id.iv_cell_7_5_id35).setImageResource(R.drawable.test)
+        //Воспроизведение звуков
+        findViewById<ImageView>(R.id.iv_cell_1_1_id1).setOnClickListener{playSound(1)}
+        findViewById<ImageView>(R.id.iv_cell_1_2_id2).setOnClickListener{playSound(2)}
+        findViewById<ImageView>(R.id.iv_cell_1_3_id3).setOnClickListener{playSound(3)}
+        findViewById<ImageView>(R.id.iv_cell_1_4_id4).setOnClickListener{playSound(4)}
+        findViewById<ImageView>(R.id.iv_cell_1_5_id5).setOnClickListener{playSound(5)}
+        findViewById<ImageView>(R.id.iv_cell_2_1_id6).setOnClickListener{playSound(6)}
+        findViewById<ImageView>(R.id.iv_cell_2_2_id7).setOnClickListener{playSound(7)}
+        findViewById<ImageView>(R.id.iv_cell_2_3_id8).setOnClickListener{playSound(8)}
+        findViewById<ImageView>(R.id.iv_cell_2_4_id9).setOnClickListener{playSound(9)}
+        findViewById<ImageView>(R.id.iv_cell_2_5_id10).setOnClickListener{playSound(10)}
+        findViewById<ImageView>(R.id.iv_cell_3_1_id11).setOnClickListener{playSound(11)}
+        findViewById<ImageView>(R.id.iv_cell_3_2_id12).setOnClickListener{playSound(12)}
+        findViewById<ImageView>(R.id.iv_cell_3_3_id13).setOnClickListener{playSound(13)}
+        findViewById<ImageView>(R.id.iv_cell_3_4_id14).setOnClickListener{playSound(14)}
+        findViewById<ImageView>(R.id.iv_cell_3_5_id15).setOnClickListener{playSound(15)}
+        findViewById<ImageView>(R.id.iv_cell_4_1_id16).setOnClickListener{playSound(16)}
+        findViewById<ImageView>(R.id.iv_cell_4_2_id17).setOnClickListener{playSound(17)}
+        findViewById<ImageView>(R.id.iv_cell_4_3_id18).setOnClickListener{playSound(18)}
+        findViewById<ImageView>(R.id.iv_cell_4_4_id19).setOnClickListener{playSound(19)}
+        findViewById<ImageView>(R.id.iv_cell_4_5_id20).setOnClickListener{playSound(20)}
+        findViewById<ImageView>(R.id.iv_cell_5_1_id21).setOnClickListener{playSound(21)}
+        findViewById<ImageView>(R.id.iv_cell_5_2_id22).setOnClickListener{playSound(22)}
+        findViewById<ImageView>(R.id.iv_cell_5_3_id23).setOnClickListener{playSound(23)}
+        findViewById<ImageView>(R.id.iv_cell_5_4_id24).setOnClickListener{playSound(24)}
+        findViewById<ImageView>(R.id.iv_cell_5_5_id25).setOnClickListener{playSound(25)}
+        findViewById<ImageView>(R.id.iv_cell_6_1_id26).setOnClickListener{playSound(26)}
+        findViewById<ImageView>(R.id.iv_cell_6_2_id27).setOnClickListener{playSound(27)}
+        findViewById<ImageView>(R.id.iv_cell_6_3_id28).setOnClickListener{playSound(28)}
+        findViewById<ImageView>(R.id.iv_cell_6_4_id29).setOnClickListener{playSound(29)}
+        findViewById<ImageView>(R.id.iv_cell_6_5_id30).setOnClickListener{playSound(30)}
+        findViewById<ImageView>(R.id.iv_cell_7_1_id31).setOnClickListener{playSound(31)}
+        findViewById<ImageView>(R.id.iv_cell_7_2_id32).setOnClickListener{playSound(32)}
+        findViewById<ImageView>(R.id.iv_cell_7_3_id33).setOnClickListener{playSound(33)}
+        findViewById<ImageView>(R.id.iv_cell_7_4_id34).setOnClickListener{playSound(34)}
+        findViewById<ImageView>(R.id.iv_cell_7_5_id35).setOnClickListener{playSound(35)}
     }
 }
